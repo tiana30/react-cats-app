@@ -3,12 +3,14 @@ import '../App.css';
 import cat from '../images/cat.svg';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+// import CarouselImages from './images-list.js';
 import Breeds from './breed-list.js';
+import SearchImages from './search-images.js';
 
 function MenuBar() {
   return (
     <Router>
-    <div>
+    <>
    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand href="#home">
   <img
@@ -28,11 +30,13 @@ function MenuBar() {
     </Nav>
   </Navbar.Collapse>
 </Navbar>
-  </div>
+{/* 
+<CarouselImages /> */}
+  </>
   <Switch>
   
   <Route path="/images">
-    <Images />
+    <SearchImages />
   </Route>
   <Route path="/">
             <Breeds />
@@ -40,11 +44,6 @@ function MenuBar() {
   </Switch>
   </Router>
   );
-
-  
-function Images() {
-  return <h2>Images</h2>;
-}
   
 }
 
