@@ -3,7 +3,7 @@ import '../App.css';
 import cat from '../images/cat.svg';
 import { Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import Breeds from './breed-list.js';
 
 function MenuBar() {
   return (
@@ -26,23 +26,22 @@ function MenuBar() {
       <Link to="/images">Images</Link>
      
     </Nav>
-    <Nav>
-      <Nav.Link href="#deets">More deets</Nav.Link>
-      <Nav.Link eventKey={2} href="#memes">
-        Dank memes
-      </Nav.Link>
-    </Nav>
   </Navbar.Collapse>
 </Navbar>
   </div>
   <Switch>
+  
   <Route path="/images">
     <Images />
   </Route>
+  <Route path="/">
+            <Breeds />
+          </Route>
   </Switch>
   </Router>
   );
 
+  
 function Images() {
   return <h2>Images</h2>;
 }
