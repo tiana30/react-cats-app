@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Container, Row, CardDeck } from 'react-bootstrap';
+import { Layout } from '../../layout';
 import SkeletonCard from './SkeletonCard';
 import CardBreeds from './CardBreeds';
 
 
-  const baseUrl = "https://api.thecatapi.com/v1/breeds?api_key=69aabfa8-6bb6-428f-bfce-a64524b9bee9&";
+  const baseUrl = "https://api.thecatapi.com/v1/breeds?api_key=69aabfa8-6bb6-428f-bfce-a64524b9bee9&&limit=6&page=10&order=desc";
 
   const Breeds = () => {
     const[breed, setBreed] = useState([]);
@@ -26,7 +27,7 @@ import CardBreeds from './CardBreeds';
     }, []);
   
   return (
-    <>
+    <Layout>
       <Container fluid>
       <Row>
         <h2>Breed List</h2>
@@ -36,14 +37,14 @@ import CardBreeds from './CardBreeds';
       {loading && <SkeletonCard />}
       {!loading && breed.map((item) => 
       
-        <CardBreeds key={item.id} item={item} /> 
+      <CardBreeds key={item.id} item={item} /> 
          
       )}
     
       </CardDeck>
       </Row>
       </Container>
-    </>
+    </Layout>
   );
   }
 

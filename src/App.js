@@ -1,13 +1,31 @@
 import React from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MenuBar from './components/MenuBar.js';
+import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import MenuBar from './components/layout/MenuBar.js';
+import CarouselImages from './components/pages/ImagesCarousel/ImageCaraousel.js';
+import Breeds from './components/pages/BreedList/AppBreeds.js';
+import Home from './components/pages/Home/Home';
 
 function App() {
   return (
-    <div className="Container">
-      <MenuBar />  
-    </div>
+  
+    <Container fluid> 
+    <Router>
+    <MenuBar />
+    <Switch>
+   <Route exact path="/">
+    <Home />
+  </Route>
+  <Route path="/breeds">
+    <Breeds />
+  </Route>
+  <Route path="/images">
+    <CarouselImages />
+  </Route>
+  </Switch> </Router>
+  </Container>
+ 
   );
 }
 

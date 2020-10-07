@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Container, Carousel} from 'react-bootstrap';
+import { Layout } from '../../layout';
 
   const baseUrl = "https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc&api_key=69aabfa8-6bb6-428f-bfce-a64524b9bee9&";
 
@@ -29,13 +30,13 @@ import { Container, Carousel} from 'react-bootstrap';
     );
     
   return (
-    <>
+    <Layout>
       <Container fluid>
       <Carousel>
           {listImages}
       </Carousel>
       </Container>
-    </>
+    </Layout>
   );
   }
 
