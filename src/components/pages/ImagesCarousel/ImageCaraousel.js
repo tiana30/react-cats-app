@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Carousel} from 'react-bootstrap';
+import { Row, Carousel} from 'react-bootstrap';
 import { Layout } from '../../layout';
 
   const baseUrl = "https://api.thecatapi.com/v1/images/search?limit=5&page=10&order=Desc&api_key=69aabfa8-6bb6-428f-bfce-a64524b9bee9&";
@@ -19,9 +19,7 @@ import { Layout } from '../../layout';
     const listImages = image.map((item) => 
     <Carousel.Item>
     <img
-    className="d-block w-100"
-    width="150"
-    height="300"
+    className="rounded d-block img-thumbnail"
     key={item.id}
     src={item.url} 
     alt="cats"
@@ -31,11 +29,14 @@ import { Layout } from '../../layout';
     
   return (
     <Layout>
-      <Container fluid>
+    <Row>
+      <h1>Images Carousel</h1>
+    </Row>
+    <Row>
       <Carousel>
           {listImages}
       </Carousel>
-      </Container>
+    </Row>
     </Layout>
   );
   }

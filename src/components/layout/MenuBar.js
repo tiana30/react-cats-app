@@ -1,7 +1,7 @@
 import React from 'react';
 import { Navbar, Nav} from 'react-bootstrap';
 import { NavLink } from "react-router-dom";
-
+import cat from '../../images/cat.svg'
 
 function MenuBar() {
   const menu = [
@@ -14,13 +14,22 @@ function MenuBar() {
   ]
   return (
     <>
-  <Navbar bg="dark" expand="lg" variant="dark">
-  <Navbar.Brand href="/">Kucing Kucingan</Navbar.Brand>
+  <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
+  <Navbar.Brand href="/">
+    <img
+          alt=""
+          src={cat}
+          width="30"
+          height="30"
+          className="d-inline-block align-top ml-5"
+        />{' '}
+    Kucing Kucingan
+  </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-  <Nav justify className="mr-auto"> 
+  <Nav justify className="ml-5 mr-5"> 
   {menu.map((menu,index) => 
-    <NavLink key={index} exact to={menu.path}>
+    <NavLink key={index} exact to={menu.path} className=" ml-3 text-light">
       {menu.name}
     </NavLink>
   )}

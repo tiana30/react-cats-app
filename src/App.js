@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import MenuBar from './components/layout/MenuBar.js';
+import {MenuBar, Footer} from './components/layout/';
 import CarouselImages from './components/pages/ImagesCarousel/ImageCaraousel.js';
 import Breeds from './components/pages/BreedList/AppBreeds.js';
 import Home from './components/pages/Home/Home';
@@ -10,8 +10,9 @@ import Home from './components/pages/Home/Home';
 function App() {
   return (
   
-    <Container fluid> 
-    <Router>
+    
+  <Router>
+    <Container fluid className="p-3"> 
     <MenuBar />
     <Switch>
    <Route exact path="/">
@@ -23,8 +24,11 @@ function App() {
   <Route path="/images">
     <CarouselImages />
   </Route>
-  </Switch> </Router>
+  </Switch> <Footer />
   </Container>
+</Router>
+  
+  
  
   );
 }

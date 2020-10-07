@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Container, Row, CardDeck } from 'react-bootstrap';
+import { Row, CardDeck } from 'react-bootstrap';
 import { Layout } from '../../layout';
 import SkeletonCard from './SkeletonCard';
 import CardBreeds from './CardBreeds';
@@ -28,11 +28,8 @@ import CardBreeds from './CardBreeds';
   
   return (
     <Layout>
-      <Container fluid>
-      <Row>
-        <h2>Breed List</h2>
-      </Row>
-      <Row>
+    <Row>
+      <h1 className="text-center">List Breeds</h1>
       <CardDeck>
       {loading && <SkeletonCard />}
       {!loading && breed.map((item) => 
@@ -40,10 +37,8 @@ import CardBreeds from './CardBreeds';
       <CardBreeds key={item.id} item={item} /> 
          
       )}
-    
       </CardDeck>
       </Row>
-      </Container>
     </Layout>
   );
   }

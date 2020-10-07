@@ -1,28 +1,16 @@
 import React from 'react';
-import {Media} from 'react-bootstrap';
+import { Row} from 'react-bootstrap';
 import { Layout } from '../../layout';
 
 const Home = () => {
 return(
   <Layout>
-  <Media>
-    <Media.Body>
-      <h5>Media Heading</h5>
-      <p>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-        ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-        tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-        Donec lacinia congue felis in faucibus.
-      </p>
-    </Media.Body>
-    <img
-      width={64}
-      height={64}
-      className="ml-3"
-      src="holder.js/64x64"
-      alt="Generic placeholder"
-    />
-  </Media>
+  <Row>
+  <h1>Home</h1>
+     <p>
+     Build fast, responsive sites with Bootstrap Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins. 
+     </p>
+  </Row>
   </Layout >
     )
 }
